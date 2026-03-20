@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-10 mx-auto p-5 glass-card shadow-lg mt-4">
+            <h2 class="mb-4 gradient-text fw-bold">{{ legend }}</h2>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group mb-4">
+                    <div class="mb-4">
+                        {{ form.title.label(class="form-control-label fw-medium mb-2 fs-5") }}
+                        {% if form.title.errors %}
+                            {{ form.title(class="form-control form-control-lg is-invalid text-light shadow-sm") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.title(class="form-control form-control-lg text-light shadow-sm") }}
+                        {% endif %}
+                    </div>
+                    <div class="mb-4">
+                        {{ form.content.label(class="form-control-label fw-medium mb-2 fs-5") }}
+                        {% if form.content.errors %}
+                            {{ form.content(class="form-control form-control-lg is-invalid text-light shadow-sm", rows="8") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.content.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.content(class="form-control form-control-lg text-light shadow-sm", rows="8") }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group text-end mt-4">
+                    <a class="btn btn-outline-light me-2 px-4 shadow-sm" href="{{ url_for('home') }}">Cancel</a>
+                    {{ form.submit(class="btn btn-primary-gradient px-5 shadow-sm") }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

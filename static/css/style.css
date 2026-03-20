@@ -1,0 +1,99 @@
+:root {
+    --bg-color: #0d1117;
+    --text-color: #e6edf3;
+    --primary-gradient: linear-gradient(135deg, #7b2cbf, #2a9d8f);
+    --card-bg: rgba(22, 27, 34, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glow: rgba(123, 44, 191, 0.4);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(42, 157, 143, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(123, 44, 191, 0.15) 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.glass-nav {
+    background: rgba(13, 17, 23, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--glow);
+}
+
+.btn-primary-gradient {
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-gradient:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px var(--glow);
+    transform: scale(1.02);
+}
+
+.form-control, .form-control:focus {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(123, 44, 191, 0.25);
+    border-color: #7b2cbf;
+}
+
+.post-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.post-title a:hover {
+    color: #2a9d8f;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+.btn-sm-glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e6edf3;
+    border: 1px solid var(--glass-border);
+    transition: all 0.2s;
+}
+
+.btn-sm-glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
